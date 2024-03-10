@@ -1,0 +1,10 @@
+.fa-bars{
+    margin-left: 15px;
+    margin-right: 25px;
+    cursor: pointer;
+}
+.fa-bars:hover {
+    transform: scale(1.15);
+    transition: transform 0.2s ease;
+    
+}
