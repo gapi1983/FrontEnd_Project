@@ -2,8 +2,8 @@
   <app-navbar (sideNavToggle)="sideNavStatus = $event;"></app-navbar>
   <main>
       <app-sidebar class="black-border" [sideNavStatus]="sideNavStatus" [ngClass]="{'app-side-nav-open':sideNavStatus}"></app-sidebar>
-      <div class="display p-3" [ngClass]="{'display-area-shrink':sideNavStatus}">
-        <app-users></app-users>
+      <div class="display p-3" [ngClass]="{'display-shrink':sideNavStatus}">
+        <router-outlet></router-outlet>
     </div>
   </main>
 </div>
