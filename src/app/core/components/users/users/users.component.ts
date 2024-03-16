@@ -60,5 +60,6 @@ export class UsersComponent implements OnInit {
 
   getUserAlbum(userId: number): void {
     console.log('User ID:', userId);
+    console.log(this.albums)
   }
 }
