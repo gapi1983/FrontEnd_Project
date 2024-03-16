@@ -8,6 +8,8 @@ import { NavbarComponent } from './core/components/navbar/navbar/navbar.componen
 import { PhotosComponent } from './core/components/photos/photos/photos.component';
 import { SidebarComponent } from './core/components/sidebar/sidebar/sidebar.component';
 import { UsersComponent } from './core/components/users/users/users.component';
+import { HomeComponent } from './core/components/home/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { UsersComponent } from './core/components/users/users/users.component';
     NavbarComponent,
     PhotosComponent,
     SidebarComponent,
-    UsersComponent
+    UsersComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

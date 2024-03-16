@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UsersComponent } from './core/components/users/users/users.component';
 import { PhotosComponent } from './core/components/photos/photos/photos.component';
 import { AlbumsComponent } from './core/components/albums/albums/albums.component';
+import { HomeComponent } from './core/components/home/home/home.component';
 
 const routes: Routes = [
   {
@@ -14,9 +15,14 @@ const routes: Routes = [
     component:PhotosComponent
   },
   {
-    path:"Albums",
+    path:"Albums/:userId",
     component:AlbumsComponent
-  }
+  },
+  {
+    path:"",
+    component:HomeComponent
+  },
+
 ];
 
 @NgModule({

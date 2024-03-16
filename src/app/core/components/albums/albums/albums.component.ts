@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-albums',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./albums.component.css']
 })
 export class AlbumsComponent {
+
+  constructor(private route: ActivatedRoute) {}
+
+  
 
 }

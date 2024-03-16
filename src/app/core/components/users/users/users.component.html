@@ -1,13 +1,16 @@
 
 <div class="container">
-    <div class="row">
-      <div class="col-md-3 mb-5" *ngFor="let user of users">
-        <div class="card" >
-          <img src="https://via.placeholder.com/150/d32776" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title" style="text-align: center;">Gašper Živalič</h5>
-          </div>
+  <div class="row">
+    <div class="col-md-3 mb-5" *ngFor="let user of users" (click)="getUserAlbum(user.id)">
+      <div class="card">
+        <img  src="{{user.albums[0].photos[0].thumbnailUrl}}" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">{{ user.name }}</h5>
+          <hr>
+          <p style="text-align: center;">{{user.username}}</p>
+          
         </div>
       </div>
     </div>
   </div>
+</div>
