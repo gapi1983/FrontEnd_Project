@@ -1,16 +1,26 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; 
-import { User } from '../models/user.model';
+import { HttpClient } from '@angular/common/http'; // Import the 'HttpClient' class
+import { User } from '../../models/users/user.model';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { Album } from '../../models/albums/album.model';
+import { Photo } from '../../models/photos/photo.model';
+
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  constructor(private http: HttpClient) { } 
+ 
+  constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${environment.apiBaseUrl}/users`);  // url shranil v environmets 
+  // Create a method to get the users
+  getUsers():Observable<User[]> {
+    return this.http.get<User[]>(`https://jsonplaceholder.typicode.com/users`)
+  }
+  getAlbums():Observable<Album[]> {
+    return this.http.get<Album[]>(`https://jsonplaceholder.typicode.com/albums`)
+  }
+  getPhotos():Observable<Photo[]> {
+    return this.http.get<Photo[]>(`https://jsonplaceholder.typicode.com/photos`)
   }
 }

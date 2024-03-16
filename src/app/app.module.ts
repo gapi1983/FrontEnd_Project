@@ -8,6 +8,7 @@ import { NavbarComponent } from './core/components/navbar/navbar/navbar.componen
 import { PhotosComponent } from './core/components/photos/photos/photos.component';
 import { SidebarComponent } from './core/components/sidebar/sidebar/sidebar.component';
 import { UsersComponent } from './core/components/users/users/users.component';
+import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UsersComponent } from './core/components/users/users/users.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
