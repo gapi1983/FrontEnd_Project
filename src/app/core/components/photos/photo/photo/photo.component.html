@@ -1,0 +1,36 @@
+<div class="container">
+  <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page"><a routerLink="/Users">Users </a></li>
+      <li class="breadcrumb-item" aria-current="page"><a routerLink="{{this.albumsRoute}}">Users Albums</a></li>
+      <li class="breadcrumb-item" aria-current="page">Albums Photos</li>
+    </ol>
+  </nav>
+<div class="container-sm" style="max-width: 500px; margin-top: 5%;">
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+    <div class="carousel-indicators">
+
+      <button *ngFor="let photo of photos; let i = index" type="button" data-bs-target="#carouselExampleCaptions" [attr.data-bs-slide-to]="i" [class.active]="i === 0" [attr.aria-current]="i === 0 ? 'true' : null" aria-label="Slide"></button>
+    </div>
+    <div class="carousel-inner">
+
+      <div *ngFor="let photo of photos; let i = index" class="carousel-item" [class.active]="i === 0" style="cursor: pointer;" >
+        <img [src]="photo.thumbnailUrl" class="d-block w-100" alt="..." (click)="openPhoto(photo.id)">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{ photo.title }}</h5>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+
+

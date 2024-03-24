@@ -1,1 +1,16 @@
-<p>albums works!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 mb-5" *ngFor="let album of albums; let i = index" (click)="GetAlbumPhotos(album.id)">
+            <div class="card">
+                <img class="card-img-top">
+                <div class="card-body">
+                    <p class="card-title" style="text-align: center;"><strong>Album ID: </strong><br>{{album.id}}</p>
+                    <hr>
+                    <p class="card-title" style="text-align: center;"><strong>Album Title:</strong><br>{{album.title}}</p>
+                    <p style="text-align: center;"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

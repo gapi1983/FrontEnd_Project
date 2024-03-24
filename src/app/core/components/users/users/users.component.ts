@@ -5,6 +5,7 @@ import { Album } from 'src/app/core/models/albums/album.model';
 import { Photo } from 'src/app/core/models/photos/photo.model';
 import { forkJoin } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -16,7 +17,7 @@ export class UsersComponent implements OnInit {
   albums: Album[] = [];
   photos: Photo[] = [];
 
-  constructor(private usersService: UsersService) {}
+  constructor(private usersService: UsersService, private router:Router) {}
 
   ngOnInit(): void {
     forkJoin({
@@ -59,7 +60,6 @@ export class UsersComponent implements OnInit {
   }
 
   getUserAlbum(userId: number): void {
-    console.log('User ID:', userId);
-    console.log(this.albums)
+    this.router.navigate(['Albums/Album/',userId]);
   }
 }

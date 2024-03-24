@@ -13,7 +13,7 @@ export class UsersService {
  
   constructor(private http: HttpClient) { }
 
-  // Create a method to get the users
+
   getUsers():Observable<User[]> {
     return this.http.get<User[]>(`https://jsonplaceholder.typicode.com/users`)
   }
@@ -22,5 +22,8 @@ export class UsersService {
   }
   getPhotos():Observable<Photo[]> {
     return this.http.get<Photo[]>(`https://jsonplaceholder.typicode.com/photos`)
+  }
+  getUserById(userId: number): Observable<User> {
+    return this.http.get<User>(`https://jsonplaceholder.typicode.com/users/${userId}`);
   }
 }

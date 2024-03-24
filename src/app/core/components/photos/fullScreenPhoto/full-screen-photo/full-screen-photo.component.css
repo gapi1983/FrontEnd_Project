@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    border: none; /* Add this line to hide the border */
+}
+.desc-titles{
+    font-weight: bold;
+}
+img{
+    cursor: pointer;
+}
+.desc-titles-container {
+    display: flex;
+}
+
+.desc-description-container {
+    display: flex;
+    align-items: baseline; /* Align the items on the baseline */
+}
+
+.desc-titles {
+    margin-right: 10px; /* Add spacing between titles */
+}
+
+.desc-titles:not(:last-child) {
+    margin-right: 10px; /* Add spacing between titles except for the last one */
+}
